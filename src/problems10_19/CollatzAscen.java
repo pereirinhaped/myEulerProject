@@ -1,10 +1,10 @@
 package problems10_19;
 
-public class Problem_14 {
-	
-	public static void main(String[] args) {
+public class CollatzAscen {
+
+public static void main(String[] args) {
 		
-		printCollatzMaxs(999999, 500000);
+		printCollatzMaxs(1, 1000000);
 		
 	}
 	
@@ -20,11 +20,11 @@ public class Problem_14 {
 				maxSeq = collatzLength(iCur);
 				iMax = iCur;
 				System.out.println("*** NEW iMax: " + iMax + " - maxSeq: " + maxSeq);
-				iCur -= 2;
+				iCur++;
 			} else {
-				iCur -= 2;
+				iCur++;
 			}
-		} while (iCur > intEnd);
+		} while (iCur < intEnd);
 		System.out.println("***\niMax: " + iMax + " - maxSeq: " + maxSeq);
 	}
 	
