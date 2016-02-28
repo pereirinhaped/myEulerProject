@@ -17,8 +17,7 @@ public class Problem_16 {
 		
 		int result = 0;
 		
-		BigInteger toCalc = getExp(n, x);
-		String toSum = convertToString(toCalc);
+		String toSum = convertToString(n, x);
 		
 		for (int i = 0; i < toSum.length(); ++i) {
 			int aInt = Character.getNumericValue(toSum.charAt(i));
@@ -29,20 +28,14 @@ public class Problem_16 {
 		
 	}
 	
-	// Auxiliary function that converts result Double to String
-	private static String convertToString(BigInteger n) {
-		String result = n.toString();
+	// Auxiliary function that calculates and converts result BigInteger to String
+	private static String convertToString(String n, int x) {
+		
+		BigInteger expResult = new BigInteger(n).pow(x);
+		
+		String result = expResult.toString();
 		
 		return result;
-	}
-	
-	// Auxiliary function to get exponential result
-	private static BigInteger getExp(String x, int y) {
-		
-		BigInteger result = new BigInteger(x).pow(y);
-		
-		return result;
-		
 	}
 	
 }
